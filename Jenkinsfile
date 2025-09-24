@@ -5,11 +5,6 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                openshift.withCluster() {
-                    openshift.withProject() {
-                        echo "Hello from project ${openshift.project()} in cluster ${openshift.cluster()}"
-                    }
-                }
             }
         }
         stage("Checkout") {
